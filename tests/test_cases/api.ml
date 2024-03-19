@@ -10,6 +10,7 @@ let request_with_file endpoint response_file =
 let test_get_advertisements () =
   request_with_file Api.Community.Advertisement.get "findAdvertisements.json"
   >>= function
-  | Some json -> Lwt.return @@ Alcotest.(check string) "Struct has id" "SUCCESS" json.result.message
+  | Some advertisement ->
+    Lwt.return @@ Alcotest.(check string) "Response was success" "SUCCESS" advertisement.result.message
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
