@@ -1,0 +1,18 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "achievementDefs": [
+    {
+      "id": 1,
+      "name": "ACHIEVEMENT_ETERNAL_GRATITUDE",
+      "name_locstringid": -1,
+      "description_locstringid": -1,
+      "icon": "",
+      "timemodified": 1698788187,
+      "deleted": 0,
+      "itembundle_id": -1
+    },
+  ]
+}
