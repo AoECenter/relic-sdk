@@ -1,0 +1,8 @@
+(include_subdirs qualified)
+
+(library
+ (name relic_sdk)
+ (public_name relic-sdk)
+ (libraries yojson cohttp-lwt-unix)
+ (instrumentation
+  (backend bisect_ppx)))

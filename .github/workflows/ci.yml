@@ -1,0 +1,27 @@
+name: OCaml CI
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Setup OCaml
+      uses: avsm/setup-ocaml@v2
+      with:
+        ocaml-compiler: '4.14.0'
+
+    - name: Check
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libssl-dev
+        opam install . --deps-only --with-test --with-doc
+        opam install ocamlformat
+        eval $(opam env)
+        make lint
+        make test
+        make
