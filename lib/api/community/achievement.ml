@@ -10,3 +10,6 @@ let get_available game domain send =
     Lwt.return @@ Some model
   | None -> Lwt.return None
 ;;
+
+get_user_achievements game domain send profileid =
+
