@@ -1,0 +1,47 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "news": [
+    {
+      "id": 862,
+      "hidden": 0,
+      "newscategory": "",
+      "newstitle_locstringid": 85,
+      "newssubtitle_locstringid": -1,
+      "newstext_locstringid": 86,
+      "newsimage": "Victors and Vanquished available NOW!",
+      "newsbody": "",
+      "metadata": "LNEWS;fmt=1",
+      "datevisible": 1710435600,
+      "expirytime": 1713114000
+    },
+    {
+      "id": 849,
+      "hidden": 0,
+      "newscategory": "",
+      "newstitle_locstringid": 67,
+      "newssubtitle_locstringid": -1,
+      "newstext_locstringid": 68,
+      "newsimage": "Return to Rome is LIVE!",
+      "newsbody": "",
+      "metadata": "LNEWS;fmt=1",
+      "datevisible": 1684256400,
+      "expirytime": 1715847369
+    },
+    {
+      "id": 1,
+      "hidden": 0,
+      "newscategory": "",
+      "newstitle_locstringid": 1,
+      "newssubtitle_locstringid": -1,
+      "newstext_locstringid": 2,
+      "newsimage": "Welcome to Age of Empires II: Definitive Edition!",
+      "newsbody": "Welcome to Age of Empires II: Definitive Edition! We are excited to have you join us for the launch of the game, and look forward to building a legacy that will stand the test of time and continue to grow in the years to come!\r\n\r\nAs you begin your journey, take the time to follow our social channels for news, updates, and information about what we have in store for Age of Empires:. If you encounter an issue while playing, you can visit ageofempires.com/support for troubleshooting tips and common solutions.\r\n\r\nWe hope you enjoy the Definitive Edition, and encourage you to come talk with us about your experience, leave us feedback, and let us know of any issues you encounter in the game.\r\n\r\nThank you for playing!\r\n\r\n- The Age of Empires Team",
+      "metadata": "LNEWS",
+      "datevisible": 1573660800,
+      "expirytime": 1763064000
+    }
+  ]
+}

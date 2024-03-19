@@ -14,3 +14,10 @@ let test_get_advertisements () =
     Lwt.return @@ Alcotest.(check string) "Response was success" "SUCCESS" advertisement.result.message
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
+
+let test_get_news () =
+  request_with_file Api.Community.News.get "getNews.json"
+  >>= function
+  | Some news -> Lwt.return @@ Alcotest.(check string) "Response was success" "SUCCESS" news.result.message
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
