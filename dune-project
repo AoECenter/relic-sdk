@@ -32,6 +32,10 @@
    (and
     :with-test
     (>= 1.3.0)))
+  (alcotest-lwt
+   (and
+    :with-test
+    (>= 1.7.0)))
   (bisect_ppx
    (and
     :with-test

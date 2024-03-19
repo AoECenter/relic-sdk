@@ -1,0 +1,96 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "matches": [
+    {
+      "id": 100000001,
+      "steamlobbyid": 123456789012345678,
+      "goodoldgameslobbyid": 0,
+      "xboxsessionid": "session-1",
+      "host_profile_id": 1000001,
+      "state": 1,
+      "description": "Test match 1",
+      "visible": 1,
+      "mapname": "test map",
+      "options": "options-string-1",
+      "passwordprotected": 0,
+      "maxplayers": 8,
+      "slotinfo": "slot-info-1",
+      "matchtype_id": 1,
+      "matchmembers": [
+        {
+          "match_id": 100000001,
+          "profile_id": 1000001,
+          "ranking": 10,
+          "statgroup_id": 10001,
+          "race_id": 1,
+          "teamid": 1
+        }
+      ],
+      "observernum": 1,
+      "observermax": 10,
+      "isobservable": 1,
+      "observerdelay": 1,
+      "hasobserverpassword": 0,
+      "servicetype": 1,
+      "relayserver_region": "testregion1"
+    },
+    {
+      "id": 100000002,
+      "steamlobbyid": 123456789012345679,
+      "goodoldgameslobbyid": 0,
+      "xboxsessionid": "session-2",
+      "host_profile_id": 1000002,
+      "state": 1,
+      "description": "Test match 2",
+      "visible": 1,
+      "mapname": "test map 2",
+      "options": "options-string-2",
+      "passwordprotected": 0,
+      "maxplayers": 8,
+      "slotinfo": "slot-info-2",
+      "matchtype_id": 1,
+      "matchmembers": [
+        {
+          "match_id": 100000002,
+          "profile_id": 1000002,
+          "ranking": 20,
+          "statgroup_id": 10002,
+          "race_id": 2,
+          "teamid": 2
+        }
+      ],
+      "observernum": 2,
+      "observermax": 20,
+      "isobservable": 1,
+      "observerdelay": 2,
+      "hasobserverpassword": 0,
+      "servicetype": 2,
+      "relayserver_region": "testregion2"
+    }
+  ],
+  "avatars": [
+    {
+      "profile_id": 1000001,
+      "name": "avatar1",
+      "alias": "Test Avatar 1 人",
+      "personal_statgroup_id": 10001,
+      "xp": 10,
+      "level": 1,
+      "leaderboardregion_id": 1,
+      "country": "testcountry1"
+    },
+    {
+      "profile_id": 1000002,
+      "name": "avatar2",
+      "alias": "Test Avatar 2",
+      "personal_statgroup_id": 10002,
+      "xp": 20,
+      "level": 2,
+      "leaderboardregion_id": 2,
+      "country": "testcountry2"
+    }
+  ]
+}

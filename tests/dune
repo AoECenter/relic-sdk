@@ -1,0 +1,10 @@
+(include_subdirs qualified)
+
+(test
+ (name test)
+ (package relic-sdk)
+ (deps
+  (glob_files ./res/*.json))
+ (instrumentation
+  (backend bisect_ppx))
+ (libraries alcotest alcotest-lwt relic-sdk))
