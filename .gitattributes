@@ -1,0 +1,3 @@
+*.ml linguist-language=OCaml
+*.ml? linguist-language=OCaml
+*.ml*.in linguist-language=OCaml
