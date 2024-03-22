@@ -1,4 +1,4 @@
-type advertisement =
+type t =
   { id : int
   ; steamlobbyid : int
   ; goodoldgameslobbyid : int
@@ -12,7 +12,7 @@ type advertisement =
   ; passwordprotected : int
   ; maxplayers : int
   ; matchtype_id : int
-  ; matchmembers : Match_member.match_member list
+  ; matchmembers : Match_member.t list
   ; observernum : int
   ; observermax : int
   ; isobservable : int

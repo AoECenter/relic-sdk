@@ -1,4 +1,4 @@
-type match_member =
+type t =
   { match_id : int
   ; profile_id : int
   ; ranking : int

@@ -1,4 +1,4 @@
-type header =
+type t =
   { code : int
   ; message : string
   }

@@ -1,6 +1,6 @@
-type news_response =
-  { result : Stub.Response.header
-  ; news : Stub.News.news_entry list
+type t =
+  { result : Stub.Response.t
+  ; news : Stub.News.t list
   }
 
 let to_json r =

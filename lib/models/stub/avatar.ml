@@ -1,4 +1,4 @@
-type avatar =
+type t =
   { profile_id : int
   ; name : string
   ; alias : string

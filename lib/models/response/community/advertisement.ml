@@ -1,7 +1,7 @@
-type advertisement_response =
-  { result : Stub.Response.header
-  ; matches : Stub.Advertisement.advertisement list
-  ; avatars : Stub.Avatar.avatar list
+type t =
+  { result : Stub.Response.t
+  ; matches : Stub.Advertisement.t list
+  ; avatars : Stub.Avatar.t list
   }
 
 let to_json r =

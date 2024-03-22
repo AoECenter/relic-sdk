@@ -1,6 +1,6 @@
-type achievement_response =
-  { result : Stub.Response.header
-  ; achievement_defs : Stub.Achievement.achievement list
+type t =
+  { result : Stub.Response.t
+  ; achievement_defs : Stub.Achievement.t list
   }
 
 let to_json r =

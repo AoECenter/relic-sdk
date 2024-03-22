@@ -1,4 +1,4 @@
-type achievement_attainment =
+type t =
   { achievement_id : int
   ; achieveddate : int
   }

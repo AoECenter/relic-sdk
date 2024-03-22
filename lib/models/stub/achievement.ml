@@ -1,4 +1,4 @@
-type achievement =
+type t =
   { id : int
   ; name : string
   ; name_locstringid : int

@@ -1,4 +1,4 @@
-type news_entry =
+type t =
   { id : int
   ; hidden : int
   ; newscategory : string

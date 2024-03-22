@@ -6,7 +6,9 @@ let get game domain send =
   let* json = send url in
   match json with
   | Some j ->
-    let model = Models.Response.Community.News.from_json j in
-    Lwt.return @@ Some model
+    Lwt.return
+    @@ Json.try_parse_as
+         (module Models.Response.Community.News : Json.JsonParsable with type t = Models.Response.Community.News.t)
+         j
   | None -> Lwt.return None
 ;;
