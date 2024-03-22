@@ -6,7 +6,8 @@ let () =
          , [ Alcotest_lwt.test_case "/community/advertisement/findAdvertisements" `Quick (fun _ () ->
                Test_cases.Api.test_get_advertisements ())
            ; Alcotest_lwt.test_case "/community/news/getNews" `Quick (fun _ () -> Test_cases.Api.test_get_news ())
-           ; Alcotest_lwt.test_case "/community/achievement/getAchievements" `Quick (fun _ () -> Test_cases.Api.test_get_achievements ())
+           ; Alcotest_lwt.test_case "/community/achievement/getAchievements" `Quick (fun _ () ->
+               Test_cases.Api.test_get_achievements ())
            ; Alcotest_lwt.test_case "/community/achievement/getAvailableAchievements" `Quick (fun _ () ->
                Test_cases.Api.test_get_available_achievements ())
            ] )
