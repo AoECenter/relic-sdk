@@ -3,11 +3,11 @@ let () =
   @@ Alcotest_lwt.run
        "Relic SDK"
        [ ( "api"
-         , [ Alcotest_lwt.test_case "get advertisements" `Quick (fun _ () ->
+         , [ Alcotest_lwt.test_case "/community/advertisement/findAdvertisements" `Quick (fun _ () ->
                Test_cases.Api.test_get_advertisements ())
-           ; Alcotest_lwt.test_case "get news" `Quick (fun _ () -> Test_cases.Api.test_get_news ())
-           ; Alcotest_lwt.test_case "get achievements" `Quick (fun _ () -> Test_cases.Api.test_get_achievements ())
-           ; Alcotest_lwt.test_case "get available achievements" `Quick (fun _ () ->
+           ; Alcotest_lwt.test_case "/community/news/getNews" `Quick (fun _ () -> Test_cases.Api.test_get_news ())
+           ; Alcotest_lwt.test_case "/community/achievement/getAchievements" `Quick (fun _ () -> Test_cases.Api.test_get_achievements ())
+           ; Alcotest_lwt.test_case "/community/achievement/getAvailableAchievements" `Quick (fun _ () ->
                Test_cases.Api.test_get_available_achievements ())
            ] )
        ; ( "query"

@@ -31,7 +31,7 @@ let test_get_available_achievements () =
 let test_get_achievements () =
   let requester = Mock.Json_file.create_requester "getAchievements.json" in
   let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
-  Client.get (Api.Community.Achievement.get ~profile_ids:[ 1 ]) client ~requester
+  Client.get (Api.Community.Achievement.get ~profile_ids:[1]) client ~requester
   >>= function
   | Some r -> Lwt.return @@ Alcotest.(check string) "Response was success" "SUCCESS" r.result.message
   | None -> Lwt.fail_with "Expected Some but got None"
