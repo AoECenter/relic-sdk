@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "userAchievementsMap": [
+    {
+      "4224813": [
+        {
+          "achievement_id": 134,
+          "achieveddate": 1606539175
+        }
+      ]
+    }
+  ]
+}
