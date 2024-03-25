@@ -42,7 +42,7 @@ jobs:
 
     - name: Publish documentation
       run: |
-        make doc
+        make docs
         docker build -t cr.kruhlmann.dev/aoecenter/docs/relic-sdk:latest -f doc/Dockerfile .
         docker push cr.kruhlmann.dev/aoecenter/docs/relic-sdk
       if: github.ref == 'refs/heads/master'
