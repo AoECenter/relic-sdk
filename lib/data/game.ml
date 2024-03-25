@@ -1,6 +1,6 @@
 [@@@warning "-37"]
 
-type game =
+type t =
   | Age1
   | Age2
   | Age3

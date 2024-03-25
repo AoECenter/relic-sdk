@@ -31,6 +31,18 @@ let test_get_achievements () =
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
 
+let test_find_clans () =
+  let requester = Mock.Json_file.create_requester "findClan.json" in
+  let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
+  Client.get
+    (Api.Community.Clan.get ~name:"My name" ~join_policies:[ Models.Stub.Join_policy.Open ] ~tags:[ "My tag" ])
+    client
+    ~requester
+  >>= function
+  | Some r -> Lwt.return @@ Alcotest.(check string) "Response was success" "SUCCESS" r.result.message
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
+
 let test_invalid () =
   let endpoints = [ Api.Community.News.get ] in
   Lwt_list.iter_s (fun endpoint -> Util.request_with_file_throw endpoint) endpoints

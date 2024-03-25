@@ -1,0 +1,34 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "clans": [
+    {
+      "id": 1,
+      "name": "name",
+      "fullname": "full name",
+      "description": "Description",
+      "tags": "",
+      "icon": "CR-001",
+      "membercount": 1,
+      "joinpolicy": 1,
+      "metadata": "",
+      "messageoftheday": "",
+      "statgroup_id": 17
+    },
+    {
+      "id": 111,
+      "name": "name",
+      "fullname": "full name",
+      "description": "Description",
+      "tags": "",
+      "icon": "",
+      "membercount": 200,
+      "joinpolicy": 0,
+      "metadata": "",
+      "messageoftheday": "",
+      "statgroup_id": 1
+    }
+  ]
+}

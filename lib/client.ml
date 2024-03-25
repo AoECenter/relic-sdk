@@ -2,7 +2,7 @@ open Lwt.Syntax
 
 type client =
   { domain : string
-  ; game : Data.Game.game
+  ; game : Data.Game.t
   }
 
 let create domain game = { domain; game }
@@ -16,7 +16,7 @@ let get_json url =
     let json = Yojson.Basic.from_string body in
     Lwt.return @@ Some json
   else
-    (* Find out what to do with this later. What's the return type? Do we have Result<a,b>? *)
+    (* TODO: Find out what to do with this later. What's the return type? Do we have Result<a,b>? *)
     let* _ = Lwt_io.printl (Printf.sprintf "HTTP Error: %s" (Cohttp.Code.string_of_status status)) in
     Lwt.return None
 ;;

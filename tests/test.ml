@@ -10,6 +10,7 @@ let () =
                Test_cases.Api.test_get_achievements ())
            ; Alcotest_lwt.test_case "/community/achievement/getAvailableAchievements" `Quick (fun _ () ->
                Test_cases.Api.test_get_available_achievements ())
+           ; Alcotest_lwt.test_case "/community/clan/find" `Quick (fun _ () -> Test_cases.Api.test_find_clans ())
            ; Alcotest_lwt.test_case "invalid json" `Quick (fun _ () -> Test_cases.Api.test_invalid ())
            ] )
        ; ( "query"
