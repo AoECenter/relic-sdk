@@ -13,7 +13,7 @@ jobs:
         submodules: recursive
         lfs: true
 
-    - name: Setup OCaml
+    - name: Setup ocaml
       uses: avsm/setup-ocaml@v2
       with:
         ocaml-compiler: '4.14.0'
@@ -26,22 +26,25 @@ jobs:
         opam install ocamlformat
         eval $(opam env)
 
-    - name: Lint, Test, and Build
+    - name: Lint, test, and build
       run: |
         make lint
         make test
         make
     
-    - name: Deploy Documentation
+    - name: Docker login
       uses: azure/docker-login@v1
       with:
         login-server: cr.kruhlmann.dev
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_TOKEN }}
       if: github.ref == 'refs/heads/master'
+
+    - name: Publish documentation
       run: |
         make doc
         docker build -t cr.kruhlmann.dev/aoecenter/docs/relic-sdk:latest -f doc/Dockerfile .
         docker push cr.kruhlmann.dev/aoecenter/docs/relic-sdk
+      if: github.ref == 'refs/heads/master'
 
 
