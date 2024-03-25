@@ -1,0 +1,15 @@
+{0 Relic SDK}
+
+OCaml SDK for working with the relic-link API provided by {{:https://www.ageofempires.com} World's Edge Studio}
+
+{1 Overview}
+
+{1 Quickstart}
+
+{1 Modules}
+
+{1 Example usage}
+
+{1 Acknowledgements}
+
+This SDK is based on the work of the {{:https://librematch.org/} Libre:Match} team, who has managed to partially document the API and the surrounding ecosystem through their {{:https://wiki.librematch.org/} wiki}.

@@ -6,3 +6,6 @@
  (libraries yojson cohttp-lwt-unix)
  (instrumentation
   (backend bisect_ppx)))
+
+(documentation
+ (package relic-sdk))

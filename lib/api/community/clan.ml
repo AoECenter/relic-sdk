@@ -1,6 +1,6 @@
 open Lwt.Syntax
 
-let get ?(name = "") ?(tags = []) ?(join_policies = []) game domain send =
+let get ?(name = "") ?(tags = []) ?(join_policies = []) ?(start = 0) ?(count = 100) game domain send =
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/achievement/getAchievements" () in
   let url =
     Uri.with_query'
@@ -9,6 +9,8 @@ let get ?(name = "") ?(tags = []) ?(join_policies = []) game domain send =
       ; "name", name
       ; "tags", Data.Query.encode_lst_s tags
       ; "joinPolicies", Data.Query.encode_lst_i @@ List.map Models.Stub.Join_policy.to_int join_policies
+      ; "start", string_of_int start
+      ; "count", string_of_int count
       ]
   in
   let* json = send url in

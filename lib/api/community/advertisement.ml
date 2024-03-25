@@ -1,8 +1,12 @@
 open Lwt.Syntax
 
-let get game domain send =
+let get ?(start = 0) ?(count = 100) game domain send =
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/advertisement/findAdvertisements" () in
-  let url = Uri.with_query' base_url [ "title", Data.Game.to_str game ] in
+  let url =
+    Uri.with_query'
+      base_url
+      [ "title", Data.Game.to_str game; "start", string_of_int start; "count", string_of_int count ]
+  in
   let* json = send url in
   match json with
   | Some j ->
