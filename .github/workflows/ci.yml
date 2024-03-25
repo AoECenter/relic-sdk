@@ -7,21 +7,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Check out
+      uses: actions/checkout@v2
       with:
         submodules: recursive
+        lfs: true
+
     - name: Setup OCaml
       uses: avsm/setup-ocaml@v2
       with:
         ocaml-compiler: '4.14.0'
 
-    - name: Check
+    - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y libssl-dev
         opam install . --deps-only --with-test --with-doc
         opam install ocamlformat
         eval $(opam env)
+
+    - name: Lint, Test, and Build
+      run: |
         make lint
         make test
         make
+    
+    - name: Deploy Documentation
+      uses: azure/docker-login@v1
+      with:
+        login-server: cr.kruhlmann.dev
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_TOKEN }}
+      if: github.ref == 'refs/heads/master'
+      run: |
+        make doc
+        docker build -t cr.kruhlmann.dev/aoecenter/docs/relic-sdk:latest -f doc/Dockerfile .
+        docker push cr.kruhlmann.dev/aoecenter/docs/relic-sdk
+
+
