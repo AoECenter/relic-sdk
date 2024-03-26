@@ -22,7 +22,7 @@ let () =
 At this point your client can be used to make requests through the use of the {!module:Relic_sdk.Api} modules. The API is segmented into two modules:
 
 {[
-    let* achievements = Client.get Api.Community.Achievement.get_available client in
+let* achievements = Client.get Api.Community.Achievement.get_available client in
 ]}
 
 {2 Community}
