@@ -1,5 +1,3 @@
-[@@@warning "-37"]
-
 type t =
   | Age1
   | Age2
