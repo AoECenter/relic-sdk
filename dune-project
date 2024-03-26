@@ -17,6 +17,7 @@
 
 (package
  (name relic-sdk)
+ (synopsis "SDK for the relic-link api")
  (depends
   (ocaml
    (>= 4.14))
