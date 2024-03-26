@@ -27,9 +27,7 @@ jobs:
         eval $(opam env)
         make lint
         make test
-        make docs
         make
-        docker build -t cr.kruhlmann.dev/aoecenter/docs/relic-sdk:latest -f doc/Dockerfile .
 
     - name: Docker login
       uses: azure/docker-login@v1
@@ -41,6 +39,9 @@ jobs:
 
     - name: Publish documentation
       run: |
+        eval $(opam env)
+        make docs
+        docker build -t cr.kruhlmann.dev/aoecenter/docs/relic-sdk:latest -f doc/Dockerfile .
         docker push cr.kruhlmann.dev/aoecenter/docs/relic-sdk
       if: github.ref == 'refs/heads/master'
 
