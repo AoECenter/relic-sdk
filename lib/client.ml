@@ -1,6 +1,6 @@
 open Lwt.Syntax
 
-type client =
+type t =
   { domain : string
   ; game : Data.Game.t
   }

@@ -18,7 +18,8 @@ COPY --chown=$USERNAME:$USERNAME ./lib ./lib
 RUN eval $(opam env) \
     && opam install . --yes --deps-only --with-doc \
     && make docs \
-    && cp -r _build/default/_doc/_html /doc/html
+    && cp -r _build/default/_doc/_html/relic-sdk /doc/html \
+    && cp -r _build/default/_doc/_html/odoc.support /doc/html/odoc.support
 
 FROM nginx:${NGINX_VERSION}-${DEBIAN_VERSION}
 

@@ -6,9 +6,62 @@ OCaml SDK for working with the relic-link API provided by {{:https://www.ageofem
 
 {1 Quickstart}
 
-{1 Modules}
+Requests are made using {!type:Relic_sdk.Client.t} through methods in the {!module:Relic_sdk.Client} module. A client can be initialized with the {!val:Relic_sdk.Client.create} function:
 
-{1 Example usage}
+{[
+open Relic_sdk
+open Lwt.Syntax (* Allows the use of let* syntax *)
+
+let () =
+    let open Data.Game in
+    let game = Age2 in (* Age of Empires 2 *)
+    let domain = "aoe-api.worldsedgelink.com" in (* Updated relic-link domain name *)
+    let client = Client.create domain game in
+]}
+
+At this point your client can be used to make requests through the use of the {!module:Relic_sdk.Api} modules. The API is segmented into two modules:
+
+{[
+    let* achievements = Client.get Api.Community.Achievement.get_available client in
+]}
+
+{2 Community}
+
+Community endpoints are open to the general public and do not require any authentication credentials. The following modules are exposed:
+
+- {!module:Relic_sdk.Api.Community.Achievement}
+- {!module:Relic_sdk.Api.Community.Advertisement}
+- {!module:Relic_sdk.Api.Community.Clan}
+- {!module:Relic_sdk.Api.Community.Community_event}
+- {!module:Relic_sdk.Api.Community.External}
+- {!module:Relic_sdk.Api.Community.Item}
+- {!module:Relic_sdk.Api.Community.Leaderboard}
+- {!module:Relic_sdk.Api.Community.News}
+
+Keep in mind that some modules contain multiple endpoints. For example {!module:Relic_sdk.Api.Community.Achievement} exposes both [get] and [get_available].
+
+{2 Game}
+
+TODO (authentication)
+
+- {!module:Relic_sdk.Api.Game.Account}
+- {!module:Relic_sdk.Api.Game.Achievement}
+- {!module:Relic_sdk.Api.Game.Advertisement}
+- {!module:Relic_sdk.Api.Game.Automatch}
+- {!module:Relic_sdk.Api.Game.Automatch2}
+- {!module:Relic_sdk.Api.Game.Challenge}
+- {!module:Relic_sdk.Api.Game.Chat}
+- {!module:Relic_sdk.Api.Game.Clan}
+- {!module:Relic_sdk.Api.Game.Cloud}
+- {!module:Relic_sdk.Api.Game.Community_event}
+- {!module:Relic_sdk.Api.Game.Invitation}
+- {!module:Relic_sdk.Api.Game.Item}
+- {!module:Relic_sdk.Api.Game.Leaderboard}
+- {!module:Relic_sdk.Api.Game.Login}
+- {!module:Relic_sdk.Api.Game.News}
+- {!module:Relic_sdk.Api.Game.Party}
+- {!module:Relic_sdk.Api.Game.Playerreport}
+- {!module:Relic_sdk.Api.Game.Relationship}
 
 {1 Acknowledgements}
 
