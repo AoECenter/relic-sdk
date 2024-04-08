@@ -93,6 +93,16 @@ let test_get_avatar_stat () =
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
 
+let test_get_leaderboard2 () =
+  let requester = Mock.Json_file.create_requester "getLeaderBoard2.json" in
+  let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
+  let endpoint = Api.Community.Leaderboard.get_leaderboard_2 in
+  Client.get endpoint client ~requester
+  >>= function
+  | Some r -> Lwt.return @@ Alcotest.(check int) "Id [0] was correct" 1178783 (List.nth r.stat_groups 0).id
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
+
 let test_invalid () =
   let endpoints = [ Api.Community.News.get ] in
   Lwt_list.iter_s (fun endpoint -> Util.request_with_file_throw endpoint) endpoints

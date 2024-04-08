@@ -17,6 +17,10 @@ let () =
                Test_cases.Api.test_get_community_events ())
            ; Alcotest_lwt.test_case "/community/leaderboard/GetAvailableLeaderboards" `Quick (fun _ () ->
                Test_cases.Api.test_get_leaderboards ())
+           ; Alcotest_lwt.test_case "/community/leaderboard/GetAvatarStatForProfile" `Quick (fun _ () ->
+               Test_cases.Api.test_get_avatar_stat ())
+           ; Alcotest_lwt.test_case "/community/leaderboard/getLeaderBoard2.json" `Quick (fun _ () ->
+               Test_cases.Api.test_get_leaderboard2 ())
            ; Alcotest_lwt.test_case "invalid json" `Quick (fun _ () -> Test_cases.Api.test_invalid ())
            ] )
        ; ( "query"

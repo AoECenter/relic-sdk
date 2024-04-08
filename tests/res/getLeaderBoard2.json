@@ -1,0 +1,497 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "statGroups": [
+    {
+      "id": 1178783,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 1389164,
+          "name": "/steam/76561198240662592",
+          "alias": "The Illusionist",
+          "personal_statgroup_id": 1178783,
+          "xp": 4649,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "sk"
+        }
+      ]
+    },
+    {
+      "id": 4961990,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 6440047,
+          "name": "/steam/76561198067238361",
+          "alias": "Blackheart",
+          "personal_statgroup_id": 4961990,
+          "xp": 2080,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "de"
+        }
+      ]
+    },
+    {
+      "id": 3381111,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 4012008,
+          "name": "/steam/76561198294644972",
+          "alias": "chaos_2_win",
+          "personal_statgroup_id": 3381111,
+          "xp": 4624,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "de"
+        }
+      ]
+    },
+    {
+      "id": 6138669,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 10921131,
+          "name": "/steam/76561199383684361",
+          "alias": "modern clix",
+          "personal_statgroup_id": 6138669,
+          "xp": 1256,
+          "level": 1,
+          "leaderboardregion_id": 4,
+          "country": "ar"
+        }
+      ]
+    },
+    {
+      "id": 9406284,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 15391105,
+          "name": "/steam/76561199516701491",
+          "alias": "momo",
+          "personal_statgroup_id": 9406284,
+          "xp": 160,
+          "level": 1,
+          "leaderboardregion_id": 3,
+          "country": "us"
+        }
+      ]
+    },
+    {
+      "id": 392817,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 541127,
+          "name": "/steam/76561198084061002",
+          "alias": "RmcooTheHater_",
+          "personal_statgroup_id": 392817,
+          "xp": 2426,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "lt"
+        }
+      ]
+    },
+    {
+      "id": 487079,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 628503,
+          "name": "/steam/76561198036586732",
+          "alias": "Valas",
+          "personal_statgroup_id": 487079,
+          "xp": 7210,
+          "level": 3,
+          "leaderboardregion_id": 0,
+          "country": "fi"
+        }
+      ]
+    },
+    {
+      "id": 5566952,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 9555704,
+          "name": "/steam/76561199242460562",
+          "alias": "Ganji",
+          "personal_statgroup_id": 5566952,
+          "xp": 5043,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "de"
+        }
+      ]
+    },
+    {
+      "id": 39756,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 239238,
+          "name": "/steam/76561198113285862",
+          "alias": "Fedex",
+          "personal_statgroup_id": 39756,
+          "xp": 2672,
+          "level": 2,
+          "leaderboardregion_id": 4,
+          "country": "ar"
+        }
+      ]
+    },
+    {
+      "id": 53707,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 250103,
+          "name": "/steam/76561198061054857",
+          "alias": "_Hallis",
+          "personal_statgroup_id": 53707,
+          "xp": 3129,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "gb"
+        }
+      ]
+    },
+    {
+      "id": 1410821,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 1629889,
+          "name": "/steam/76561198354278976",
+          "alias": "[KGB] Alive",
+          "personal_statgroup_id": 1410821,
+          "xp": 4219,
+          "level": 2,
+          "leaderboardregion_id": 4,
+          "country": "br"
+        }
+      ]
+    },
+    {
+      "id": 61573,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 256338,
+          "name": "/steam/76561198007187809",
+          "alias": "Running",
+          "personal_statgroup_id": 61573,
+          "xp": 5491,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "de"
+        }
+      ]
+    },
+    {
+      "id": 4317687,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 5416282,
+          "name": "/steam/76561199159318317",
+          "alias": "Smurf_zZ",
+          "personal_statgroup_id": 4317687,
+          "xp": 1057,
+          "level": 1,
+          "leaderboardregion_id": 4,
+          "country": "ar"
+        }
+      ]
+    },
+    {
+      "id": 5687009,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 9873875,
+          "name": "/steam/76561199260891276",
+          "alias": "抖音 肥龙",
+          "personal_statgroup_id": 5687009,
+          "xp": 752,
+          "level": 1,
+          "leaderboardregion_id": 2,
+          "country": "cn"
+        }
+      ]
+    },
+    {
+      "id": 6131004,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 10892656,
+          "name": "/steam/76561199383015281",
+          "alias": "loner",
+          "personal_statgroup_id": 6131004,
+          "xp": 1108,
+          "level": 1,
+          "leaderboardregion_id": 0,
+          "country": "ru"
+        }
+      ]
+    },
+    {
+      "id": 1056456,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 1252385,
+          "name": "/steam/76561199014766072",
+          "alias": "Carpincho",
+          "personal_statgroup_id": 1056456,
+          "xp": 1562,
+          "level": 1,
+          "leaderboardregion_id": 4,
+          "country": "ar"
+        }
+      ]
+    },
+    {
+      "id": 427697,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 573282,
+          "name": "/steam/76561198411901312",
+          "alias": "LACA | Terz",
+          "personal_statgroup_id": 427697,
+          "xp": 5579,
+          "level": 3,
+          "leaderboardregion_id": 0,
+          "country": "de"
+        }
+      ]
+    },
+    {
+      "id": 619706,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 757886,
+          "name": "/steam/76561198112235172",
+          "alias": "VN_DarK_KnighT_",
+          "personal_statgroup_id": 619706,
+          "xp": 2534,
+          "level": 2,
+          "leaderboardregion_id": 3,
+          "country": "mx"
+        }
+      ]
+    },
+    {
+      "id": 3465945,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 4132074,
+          "name": "/steam/76561199071416069",
+          "alias": "TRM",
+          "personal_statgroup_id": 3465945,
+          "xp": 3742,
+          "level": 2,
+          "leaderboardregion_id": 0,
+          "country": "ch"
+        }
+      ]
+    },
+    {
+      "id": 796646,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 945852,
+          "name": "/steam/76561198075555979",
+          "alias": "Lucky_zZ",
+          "personal_statgroup_id": 796646,
+          "xp": 2504,
+          "level": 2,
+          "leaderboardregion_id": 4,
+          "country": "ar"
+        }
+      ]
+    },
+    {
+      "id": 3010544,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 3320450,
+          "name": "/steam/76561199086370769",
+          "alias": "Ciskhan",
+          "personal_statgroup_id": 3010544,
+          "xp": 1188,
+          "level": 1,
+          "leaderboardregion_id": 0,
+          "country": "fr"
+        }
+      ]
+    },
+    {
+      "id": 3318781,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 3884287,
+          "name": "/steam/76561199101842491",
+          "alias": "DaddySt4rk",
+          "personal_statgroup_id": 3318781,
+          "xp": 1562,
+          "level": 1,
+          "leaderboardregion_id": 4,
+          "country": "br"
+        }
+      ]
+    },
+    {
+      "id": 2185744,
+      "name": "",
+      "type": 1,
+      "members": [
+        {
+          "profile_id": 2444511,
+          "name": "/steam/76561199050196526",
+          "alias": "Gabi",
+          "personal_statgroup_id": 2185744,
+          "xp": 6116,
+          "level": 3,
+          "leaderboardregion_id": 4,
+          "country": "br"
+        }
+      ]
+    }
+  ],
+  "leaderboardStats": [
+    {
+      "statgroup_id": 527797,
+      "leaderboard_id": 3,
+      "wins": 1902,
+      "losses": 1085,
+      "streak": 8,
+      "disputes": 0,
+      "drops": 12,
+      "rank": 1,
+      "ranktotal": 46501,
+      "ranklevel": 1,
+      "rating": 2802,
+      "regionrank": -1,
+      "regionranktotal": -1,
+      "lastmatchdate": 1712577123,
+      "highestrank": 1,
+      "highestranklevel": 1,
+      "highestrating": 2802
+    },
+    {
+      "statgroup_id": 297,
+      "leaderboard_id": 3,
+      "wins": 3053,
+      "losses": 1246,
+      "streak": 1,
+      "disputes": 0,
+      "drops": 34,
+      "rank": 2,
+      "ranktotal": 46501,
+      "ranklevel": 1,
+      "rating": 2763,
+      "regionrank": -1,
+      "regionranktotal": -1,
+      "lastmatchdate": 1712593321,
+      "highestrank": 1,
+      "highestranklevel": 1,
+      "highestrating": 2919
+    },
+    {
+      "statgroup_id": 273,
+      "leaderboard_id": 3,
+      "wins": 2042,
+      "losses": 1165,
+      "streak": -4,
+      "disputes": 0,
+      "drops": 24,
+      "rank": 3,
+      "ranktotal": 46501,
+      "ranklevel": 1,
+      "rating": 2733,
+      "regionrank": -1,
+      "regionranktotal": -1,
+      "lastmatchdate": 1712252663,
+      "highestrank": 1,
+      "highestranklevel": 1,
+      "highestrating": 2839
+    },
+    {
+      "statgroup_id": 1137,
+      "leaderboard_id": 3,
+      "wins": 1457,
+      "losses": 628,
+      "streak": 4,
+      "disputes": 0,
+      "drops": 9,
+      "rank": 4,
+      "ranktotal": 46501,
+      "ranklevel": 1,
+      "rating": 2714,
+      "regionrank": -1,
+      "regionranktotal": -1,
+      "lastmatchdate": 1712548529,
+      "highestrank": 3,
+      "highestranklevel": 1,
+      "highestrating": 2752
+    },
+    {
+      "statgroup_id": 173507,
+      "leaderboard_id": 3,
+      "wins": 2553,
+      "losses": 1143,
+      "streak": 13,
+      "disputes": 0,
+      "drops": 48,
+      "rank": 5,
+      "ranktotal": 46501,
+      "ranklevel": 1,
+      "rating": 2692,
+      "regionrank": -1,
+      "regionranktotal": -1,
+      "lastmatchdate": 1712550125,
+      "highestrank": 1,
+      "highestranklevel": 1,
+      "highestrating": 2797
+    }
+  ],
+  "rankTotal": 46501
+}
