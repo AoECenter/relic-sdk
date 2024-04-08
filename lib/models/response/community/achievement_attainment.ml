@@ -14,9 +14,12 @@ let to_json r =
 ;;
 
 let from_json json =
+  let open Yojson.Basic.Util in
   let result = Yojson.Basic.Util.(json |> member "result" |> Stub.Response.from_json) in
   let user_achievements_map =
-    Yojson.Basic.Util.(json |> member "userAchievementsMap" |> to_list)
+    json
+    |> member "userAchievementsMap"
+    |> to_list
     |> List.fold_left
          (fun acc user_achievement_json ->
            match user_achievement_json with

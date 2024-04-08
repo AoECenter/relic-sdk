@@ -8,7 +8,8 @@ let to_json r =
 ;;
 
 let from_json json =
-  { result = Yojson.Basic.Util.(json |> member "result" |> Stub.Response.from_json)
-  ; news = Yojson.Basic.Util.(json |> member "news" |> to_list |> List.map Stub.News.from_json)
+  let open Yojson.Basic.Util in
+  { result = json |> member "result" |> Stub.Response.from_json
+  ; news = json |> member "news" |> to_list |> List.map Stub.News.from_json
   }
 ;;

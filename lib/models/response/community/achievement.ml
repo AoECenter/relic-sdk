@@ -11,8 +11,8 @@ let to_json r =
 ;;
 
 let from_json json =
-  { result = Yojson.Basic.Util.(json |> member "result" |> Stub.Response.from_json)
-  ; achievement_defs =
-      Yojson.Basic.Util.(json |> member "achievementDefs" |> to_list |> List.map Stub.Achievement.from_json)
+  let open Yojson.Basic.Util in
+  { result = json |> member "result" |> Stub.Response.from_json
+  ; achievement_defs = json |> member "achievementDefs" |> to_list |> List.map Stub.Achievement.from_json
   }
 ;;

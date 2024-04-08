@@ -13,8 +13,9 @@ let to_json r =
 ;;
 
 let from_json json =
-  { result = Yojson.Basic.Util.(json |> member "result" |> Stub.Response.from_json)
-  ; matches = Yojson.Basic.Util.(json |> member "matches" |> to_list |> List.map Stub.Advertisement.from_json)
-  ; avatars = Yojson.Basic.Util.(json |> member "avatars" |> to_list |> List.map Stub.Avatar.from_json)
+  let open Yojson.Basic.Util in
+  { result = json |> member "result" |> Stub.Response.from_json
+  ; matches = json |> member "matches" |> to_list |> List.map Stub.Advertisement.from_json
+  ; avatars = json |> member "avatars" |> to_list |> List.map Stub.Avatar.from_json
   }
 ;;
