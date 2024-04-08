@@ -66,6 +66,17 @@ let test_get_community_events () =
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
 
+let test_get_leaderboards () =
+  let requester = Mock.Json_file.create_requester "GetAvailableLeaderboards.json" in
+  let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
+  Client.get Api.Community.Leaderboard.get client ~requester
+  >>= function
+  | Some r ->
+    Lwt.return
+    @@ Alcotest.(check string) "Event name [0] was correct" "SOLO_DM_RANKED" (List.nth r.leaderboards 0).name
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
+
 let test_invalid () =
   let endpoints = [ Api.Community.News.get ] in
   Lwt_list.iter_s (fun endpoint -> Util.request_with_file_throw endpoint) endpoints

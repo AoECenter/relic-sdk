@@ -15,6 +15,8 @@ let () =
                Test_cases.Api.test_get_clan_info ())
            ; Alcotest_lwt.test_case "/community/CommunityEvent/getAvailableCommunityEvents" `Quick (fun _ () ->
                Test_cases.Api.test_get_community_events ())
+           ; Alcotest_lwt.test_case "/community/leaderboard/GetAvailableLeaderboards" `Quick (fun _ () ->
+               Test_cases.Api.test_get_leaderboards ())
            ; Alcotest_lwt.test_case "invalid json" `Quick (fun _ () -> Test_cases.Api.test_invalid ())
            ] )
        ; ( "query"
