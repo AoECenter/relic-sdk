@@ -52,6 +52,20 @@ let test_get_clan_info () =
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
 
+let test_get_community_events () =
+  let requester = Mock.Json_file.create_requester "getAvailableCommunityEvents.json" in
+  let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
+  Client.get Api.Community.Community_event.get client ~requester
+  >>= function
+  | Some r ->
+    Lwt.return
+    @@ Alcotest.(check string)
+         "Event name [0] was correct"
+         "Season 7 - Solo Ranked - Controller"
+         (List.nth r.communityEvents 0).name
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
+
 let test_invalid () =
   let endpoints = [ Api.Community.News.get ] in
   Lwt_list.iter_s (fun endpoint -> Util.request_with_file_throw endpoint) endpoints

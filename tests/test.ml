@@ -13,6 +13,8 @@ let () =
            ; Alcotest_lwt.test_case "/community/clan/find" `Quick (fun _ () -> Test_cases.Api.test_find_clans ())
            ; Alcotest_lwt.test_case "/community/clan/getClanInfoFull" `Quick (fun _ () ->
                Test_cases.Api.test_get_clan_info ())
+           ; Alcotest_lwt.test_case "/community/CommunityEvent/getAvailableCommunityEvents" `Quick (fun _ () ->
+               Test_cases.Api.test_get_community_events ())
            ; Alcotest_lwt.test_case "invalid json" `Quick (fun _ () -> Test_cases.Api.test_invalid ())
            ] )
        ; ( "query"
