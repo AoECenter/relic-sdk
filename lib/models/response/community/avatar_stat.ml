@@ -11,8 +11,9 @@ let to_json r =
 ;;
 
 let from_json json =
+  let open Yojson.Basic.Util in
   { result = Yojson.Basic.Util.(json |> member "result" |> Stub.Response.from_json)
   ; avatar_stats_for_profile =
-      Yojson.Basic.Util.(json |> member "avatarStatsForProfile" |> to_list |> List.map Stub.Avatar_stat.from_json)
+      json |> member "avatarStatsForProfile" |> to_list |> List.map Stub.Avatar_stat.from_json
   }
 ;;

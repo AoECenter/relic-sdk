@@ -82,7 +82,7 @@ let test_get_leaderboards () =
 ;;
 
 let test_get_avatar_stat () =
-  let requester = Mock.Json_file.create_requester "GetAvailableLeaderboards.json" in
+  let requester = Mock.Json_file.create_requester "GetAvatarStatForProfile.json" in
   let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
   let endpoint = Api.Community.Leaderboard.get_avatar ~profile_ids:[ 1 ] in
   Client.get endpoint client ~requester
