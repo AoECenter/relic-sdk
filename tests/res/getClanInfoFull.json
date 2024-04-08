@@ -1,0 +1,134 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "clan": {
+    "id": 52618,
+    "name": "gli",
+    "fullname": "TheClick",
+    "description": "",
+    "tags": "",
+    "icon": "CR-001",
+    "membercount": 4,
+    "joinpolicy": 0,
+    "metadata": "",
+    "messageoftheday": "",
+    "statgroup_id": 2254028,
+    "permissions": [
+      {
+        "rank": 1,
+        "chat": 1,
+        "promote": 1,
+        "demote": 1,
+        "invite": 1,
+        "remove": 1,
+        "disband": 1,
+        "editinfo": 1,
+        "editpermission": 1,
+        "name": "Leader",
+        "locstringid": -1
+      },
+      {
+        "rank": 2,
+        "chat": 1,
+        "promote": 1,
+        "demote": 1,
+        "invite": 1,
+        "remove": 1,
+        "disband": 0,
+        "editinfo": 0,
+        "editpermission": 0,
+        "name": "Officer",
+        "locstringid": -1
+      },
+      {
+        "rank": 3,
+        "chat": 1,
+        "promote": 0,
+        "demote": 0,
+        "invite": 0,
+        "remove": 0,
+        "disband": 0,
+        "editinfo": 0,
+        "editpermission": 0,
+        "name": "Member",
+        "locstringid": -1
+      }
+    ],
+    "members": [
+      {
+        "avatar": {
+          "entityversion": 15688,
+          "profile_id": 238631,
+          "name": "/steam/76561198114433482",
+          "metadata": "{\"icon\":\"PR7-019\"}",
+          "alias": "Timinator",
+          "clanlist_name": "gli",
+          "personal_statgroup_id": 38975,
+          "xp": 643,
+          "level": 1,
+          "leaderboardregion_id": 3,
+          "presence_id": 0,
+          "presenceproperty": []
+        },
+        "membershipstatus": 1,
+        "playerlistpermission_rank": 3
+      },
+      {
+        "avatar": {
+          "entityversion": 5612,
+          "profile_id": 2107872,
+          "name": "/steam/76561198125039468",
+          "metadata": "{\"icon\":\"PR4-010\"}",
+          "alias": "Matt Bootsma",
+          "clanlist_name": "gli",
+          "personal_statgroup_id": 1872571,
+          "xp": 195,
+          "level": 1,
+          "leaderboardregion_id": 3,
+          "presence_id": 0,
+          "presenceproperty": []
+        },
+        "membershipstatus": 1,
+        "playerlistpermission_rank": 3
+      },
+      {
+        "avatar": {
+          "entityversion": 7709,
+          "profile_id": 2327018,
+          "name": "/steam/76561198300477799",
+          "metadata": "{\"icon\":\"PR7-031\"}",
+          "alias": "Atashwong",
+          "clanlist_name": "gli",
+          "personal_statgroup_id": 2072253,
+          "xp": 285,
+          "level": 1,
+          "leaderboardregion_id": 3,
+          "presence_id": 31,
+          "presenceproperty": []
+        },
+        "membershipstatus": 1,
+        "playerlistpermission_rank": 1
+      },
+      {
+        "avatar": {
+          "entityversion": 3614,
+          "profile_id": 2407155,
+          "name": "/steam/76561198449514731",
+          "metadata": "{\"icon\":\"PR7-033\"}",
+          "alias": "ekorvee",
+          "clanlist_name": "gli",
+          "personal_statgroup_id": 2149677,
+          "xp": 145,
+          "level": 1,
+          "leaderboardregion_id": 3,
+          "presence_id": 31,
+          "presenceproperty": []
+        },
+        "membershipstatus": 1,
+        "playerlistpermission_rank": 3
+      }
+    ]
+  }
+}

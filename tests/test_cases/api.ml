@@ -35,11 +35,20 @@ let test_find_clans () =
   let requester = Mock.Json_file.create_requester "findClan.json" in
   let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
   Client.get
-    (Api.Community.Clan.get ~name:"My name" ~join_policies:[ Models.Stub.Join_policy.Open ] ~tags:[ "My tag" ])
+    (Api.Community.Clan.find ~name:"My name" ~join_policies:[ Models.Stub.Join_policy.Open ] ~tags:[ "My tag" ])
     client
     ~requester
   >>= function
   | Some r -> Lwt.return @@ Alcotest.(check string) "Response was success" "SUCCESS" r.result.message
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
+
+let test_get_clan_info () =
+  let requester = Mock.Json_file.create_requester "getClanInfoFull.json" in
+  let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
+  Client.get (Api.Community.Clan.get "gli") client ~requester
+  >>= function
+  | Some r -> Lwt.return @@ Alcotest.(check string) "Clan name was correct" "gli" r.clan.name
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
 
