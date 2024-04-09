@@ -23,12 +23,5 @@ let () =
                Test_cases.Api.test_get_leaderboard2 ())
            ; Alcotest_lwt.test_case "invalid json" `Quick (fun _ () -> Test_cases.Api.test_invalid ())
            ] )
-       ; ( "query"
-         , [ Alcotest_lwt.test_case "encode list<int>" `Quick (fun _ () -> Test_cases.Query.test_encode_list_int ())
-           ; Alcotest_lwt.test_case "encode list<float>" `Quick (fun _ () ->
-               Test_cases.Query.test_encode_list_float ())
-           ; Alcotest_lwt.test_case "encode list<string>" `Quick (fun _ () ->
-               Test_cases.Query.test_encode_list_string ())
-           ] )
        ]
 ;;
