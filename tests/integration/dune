@@ -1,0 +1,6 @@
+(include_subdirs qualified)
+
+(test
+ (name test)
+ (package relic-sdk)
+ (libraries alcotest alcotest-lwt relic-sdk))

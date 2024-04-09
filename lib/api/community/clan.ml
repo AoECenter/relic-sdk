@@ -1,6 +1,6 @@
 open Lwt.Syntax
 
-let find ?(name = "") ?(tags = []) ?(join_policies = []) ?(start = 0) ?(count = 100) game domain send =
+let find ?(name = "") ?(tags = []) ?(join_policies = []) ?(start = 1) ?(count = 100) game domain send =
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/clan/find" () in
   let url =
     Uri.with_query'

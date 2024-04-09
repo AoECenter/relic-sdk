@@ -31,7 +31,7 @@ let get_leaderboard_2
   ?(sortby = Models.Stub.Leaderboard_sorting.ByRating)
   ?(platform = "PC_STEAM")
   ?(leaderboard_id = 3)
-  ?(start = 0)
+  ?(start = 1)
   ?(count = 100)
   game
   domain
