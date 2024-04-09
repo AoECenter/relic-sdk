@@ -3,7 +3,13 @@
 (library
  (name relic_sdk)
  (public_name relic-sdk)
- (libraries yojson cohttp-lwt-unix)
+ (flags :standard -safe-string)
+ (libraries yojson cohttp-lwt-unix bigarray base64)
+ (foreign_stubs
+  (language c)
+  (names zlib_stubs)
+  (flags -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -fPIC))
+ (c_library_flags -lz)
  (instrumentation
   (backend bisect_ppx)))
 
