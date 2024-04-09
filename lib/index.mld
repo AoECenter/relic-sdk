@@ -13,8 +13,7 @@ open Relic_sdk
 open Lwt.Syntax (* Allows the use of let* syntax *)
 
 let () =
-    let open Data.Game in
-    let game = Age2 in (* Age of Empires 2 *)
+    let game = Data.Game.Age2 in (* Age of Empires 2 *)
     let domain = "aoe-api.worldsedgelink.com" in (* Updated relic-link domain name *)
     let client = Client.create domain game in
 ]}
