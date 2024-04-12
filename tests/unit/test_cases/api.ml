@@ -113,6 +113,27 @@ let test_get_inventory () =
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
 
+let test_proxy_request () =
+  let requester = Mock.Json_file.create_requester "proxysteamuserrequest.json" in
+  let client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
+  let endpoint =
+    Api.Community.External.proxy_steam_request "/ISteamUser/GetPlayerSummaries/v0002/" [ "/steam/76561197984749679" ]
+  in
+  Client.get endpoint client ~requester
+  >>= function
+  | Some json ->
+    (match json with
+     | `Assoc items ->
+       (match List.assoc_opt "result" items with
+        | Some (`Assoc result_items) ->
+          (match List.assoc_opt "message" result_items with
+           | Some (`String msg) -> Lwt.return @@ Alcotest.(check string) "Response was success" "SUCCESS" msg
+           | _ -> Lwt.fail_with "Unexpected JSON format: 'message' not found or wrong type")
+        | _ -> Lwt.fail_with "Unexpected JSON format: 'result' not found or wrong type")
+     | _ -> Lwt.fail_with "Unexpected JSON format: Top level is not an assoc")
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
+
 let test_invalid () =
   let endpoints = [ Api.Community.News.get ] in
   Lwt_list.iter_s (fun endpoint -> Util.request_with_file_throw endpoint) endpoints

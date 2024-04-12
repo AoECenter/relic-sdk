@@ -1,0 +1,37 @@
+{
+  "result": {
+    "code": 0,
+    "message": "SUCCESS"
+  },
+  "avatars": [
+    {
+      "profile_id": 196240,
+      "name": "/steam/76561197984749679",
+      "alias": "GL.TheViper",
+      "personal_statgroup_id": 200,
+      "xp": 5606,
+      "level": 3,
+      "leaderboardregion_id": 0,
+      "country": "de"
+    }
+  ],
+  "steamResults": {
+    "response": {
+      "players": [
+        {
+          "steamid": "76561197984749679",
+          "communityvisibilitystate": 1,
+          "profilestate": 1,
+          "personaname": "GL.TheViper",
+          "commentpermission": 2,
+          "profileurl": "https://steamcommunity.com/id/secrettheviper/",
+          "avatar": "https://avatars.steamstatic.com/eefa125e4e662af9600355746783166942b8a1ff.jpg",
+          "avatarmedium": "https://avatars.steamstatic.com/eefa125e4e662af9600355746783166942b8a1ff_medium.jpg",
+          "avatarfull": "https://avatars.steamstatic.com/eefa125e4e662af9600355746783166942b8a1ff_full.jpg",
+          "avatarhash": "eefa125e4e662af9600355746783166942b8a1ff",
+          "personastate": 0
+        }
+      ]
+    }
+  }
+}

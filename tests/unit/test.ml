@@ -23,6 +23,8 @@ let () =
                Test_cases.Api.test_get_leaderboard2 ())
            ; Alcotest_lwt.test_case "/community/leaderboard/getInventoryByProfileIDs" `Quick (fun _ () ->
                Test_cases.Api.test_get_inventory ())
+           ; Alcotest_lwt.test_case "/community/external/proxysteamuserrequest" `Quick (fun _ () ->
+               Test_cases.Api.test_proxy_request ())
            ; Alcotest_lwt.test_case "invalid json" `Quick (fun _ () -> Test_cases.Api.test_invalid ())
            ] )
        ]
