@@ -11,6 +11,7 @@ type t =
   ; options : string
   ; passwordprotected : int
   ; maxplayers : int
+  ; slotinfo : Slot_info.t option
   ; matchtype_id : int
   ; matchmembers : Match_member.t list
   ; observernum : int
@@ -36,6 +37,7 @@ let to_json a =
     ; "options", `String a.options
     ; "passwordprotected", `Int a.passwordprotected
     ; "maxplayers", `Int a.maxplayers
+    ; "slotinfo", `String "" (* TODO: Compress the dict into a b64 zlib string again *)
     ; "matchtype_id", `Int a.matchtype_id
     ; "matchmembers", `List (List.map Match_member.to_json a.matchmembers)
     ; "observernum", `Int a.observernum
@@ -61,6 +63,7 @@ let from_json json =
   ; options = Yojson.Basic.Util.(json |> member "options" |> to_string)
   ; passwordprotected = Yojson.Basic.Util.(json |> member "passwordprotected" |> to_int)
   ; maxplayers = Yojson.Basic.Util.(json |> member "maxplayers" |> to_int)
+  ; slotinfo = Yojson.Basic.Util.(json |> member "slotinfo" |> to_string |> Slot_info.from_zlib_b64_str)
   ; matchtype_id = Yojson.Basic.Util.(json |> member "matchtype_id" |> to_int)
   ; matchmembers = Yojson.Basic.Util.(json |> member "matchmembers" |> to_list |> List.map Match_member.from_json)
   ; observernum = Yojson.Basic.Util.(json |> member "observernum" |> to_int)

@@ -4,7 +4,7 @@
  (name relic_sdk)
  (public_name relic-sdk)
  (flags :standard -safe-string)
- (libraries yojson cohttp-lwt-unix bigarray base64)
+ (libraries yojson cohttp-lwt-unix bigarray base64 str)
  (foreign_stubs
   (language c)
   (names zlib_stubs)

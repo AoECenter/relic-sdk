@@ -1,4 +1,4 @@
-let decompress_base64 ?(buffer_size_factor = 12) base64_str =
+let decompress_base64_str ?(buffer_size_factor = 12) base64_str =
   let compressed_data = Base64.decode_exn base64_str in
   let compressed_len = String.length compressed_data in
   let compressed_ba = Bigarray.Array1.create Bigarray.char Bigarray.c_layout compressed_len in
