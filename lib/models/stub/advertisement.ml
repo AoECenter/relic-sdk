@@ -51,27 +51,28 @@ let to_json a =
 ;;
 
 let from_json json =
-  { id = Yojson.Basic.Util.(json |> member "id" |> to_int)
-  ; steamlobbyid = Yojson.Basic.Util.(json |> member "steamlobbyid" |> to_int)
-  ; goodoldgameslobbyid = Yojson.Basic.Util.(json |> member "goodoldgameslobbyid" |> to_int)
-  ; xboxsessionid = Yojson.Basic.Util.(json |> member "xboxsessionid" |> to_string)
-  ; host_profile_id = Yojson.Basic.Util.(json |> member "host_profile_id" |> to_int)
-  ; state = Yojson.Basic.Util.(json |> member "state" |> to_int)
-  ; description = Yojson.Basic.Util.(json |> member "description" |> to_string)
-  ; visible = Yojson.Basic.Util.(json |> member "visible" |> to_int)
-  ; mapname = Yojson.Basic.Util.(json |> member "mapname" |> to_string)
-  ; options = Yojson.Basic.Util.(json |> member "options" |> to_string |> Advertisement_options.from_zlib_b64_str)
-  ; passwordprotected = Yojson.Basic.Util.(json |> member "passwordprotected" |> to_int)
-  ; maxplayers = Yojson.Basic.Util.(json |> member "maxplayers" |> to_int)
-  ; slotinfo = Yojson.Basic.Util.(json |> member "slotinfo" |> to_string |> Slot_info.from_zlib_b64_str)
-  ; matchtype_id = Yojson.Basic.Util.(json |> member "matchtype_id" |> to_int)
-  ; matchmembers = Yojson.Basic.Util.(json |> member "matchmembers" |> to_list |> List.map Match_member.from_json)
-  ; observernum = Yojson.Basic.Util.(json |> member "observernum" |> to_int)
-  ; observermax = Yojson.Basic.Util.(json |> member "observermax" |> to_int)
-  ; isobservable = Yojson.Basic.Util.(json |> member "isobservable" |> to_int)
-  ; observerdelay = Yojson.Basic.Util.(json |> member "observerdelay" |> to_int)
-  ; hasobserverpassword = Yojson.Basic.Util.(json |> member "hasobserverpassword" |> to_int)
-  ; servicetype = Yojson.Basic.Util.(json |> member "servicetype" |> to_int)
-  ; relayserver_region = Yojson.Basic.Util.(json |> member "relayserver_region" |> to_string)
+  let open Yojson.Basic.Util in
+  { id = json |> member "id" |> to_int
+  ; steamlobbyid = json |> member "steamlobbyid" |> to_int
+  ; goodoldgameslobbyid = json |> member "goodoldgameslobbyid" |> to_int
+  ; xboxsessionid = json |> member "xboxsessionid" |> to_string
+  ; host_profile_id = json |> member "host_profile_id" |> to_int
+  ; state = json |> member "state" |> to_int
+  ; description = json |> member "description" |> to_string
+  ; visible = json |> member "visible" |> to_int
+  ; mapname = json |> member "mapname" |> to_string
+  ; options = json |> member "options" |> to_string |> Advertisement_options.from_zlib_b64_str
+  ; passwordprotected = json |> member "passwordprotected" |> to_int
+  ; maxplayers = json |> member "maxplayers" |> to_int
+  ; slotinfo = json |> member "slotinfo" |> to_string |> Slot_info.from_zlib_b64_str
+  ; matchtype_id = json |> member "matchtype_id" |> to_int
+  ; matchmembers = json |> member "matchmembers" |> to_list |> List.map Match_member.from_json
+  ; observernum = json |> member "observernum" |> to_int
+  ; observermax = json |> member "observermax" |> to_int
+  ; isobservable = json |> member "isobservable" |> to_int
+  ; observerdelay = json |> member "observerdelay" |> to_int
+  ; hasobserverpassword = json |> member "hasobserverpassword" |> to_int
+  ; servicetype = json |> member "servicetype" |> to_int
+  ; relayserver_region = json |> member "relayserver_region" |> to_string
   }
 ;;
