@@ -13,3 +13,5 @@ type t =
 
 (** [to_str g] converts a game [g] into its string representation for use in the relic-link API *)
 val to_str : t -> string
+(** [to_str g] converts a game [g] into its steam app id *)
+val to_app_id : t -> int

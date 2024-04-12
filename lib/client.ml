@@ -3,9 +3,10 @@ open Lwt.Syntax
 type t =
   { domain : string
   ; game : Data.Game.t
+  ; session : Authentication.Session.t option
   }
 
-let create domain game = { domain; game }
+let create domain game = { domain; game; session = None }
 
 let get_json (url : Uri.t) =
   let* resp, body = Cohttp_lwt_unix.Client.get url in
