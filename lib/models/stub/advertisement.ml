@@ -8,7 +8,7 @@ type t =
   ; description : string
   ; visible : int
   ; mapname : string
-  ; options : string
+  ; options : Advertisement_options.t option
   ; passwordprotected : int
   ; maxplayers : int
   ; slotinfo : Slot_info.t option
@@ -34,7 +34,7 @@ let to_json a =
     ; "description", `String a.description
     ; "visible", `Int a.visible
     ; "mapname", `String a.mapname
-    ; "options", `String a.options
+    ; "options", `String "" (* TODO: Compress the list again *)
     ; "passwordprotected", `Int a.passwordprotected
     ; "maxplayers", `Int a.maxplayers
     ; "slotinfo", `String "" (* TODO: Compress the dict into a b64 zlib string again *)
@@ -60,7 +60,7 @@ let from_json json =
   ; description = Yojson.Basic.Util.(json |> member "description" |> to_string)
   ; visible = Yojson.Basic.Util.(json |> member "visible" |> to_int)
   ; mapname = Yojson.Basic.Util.(json |> member "mapname" |> to_string)
-  ; options = Yojson.Basic.Util.(json |> member "options" |> to_string)
+  ; options = Yojson.Basic.Util.(json |> member "options" |> to_string |> Advertisement_options.from_zlib_b64_str)
   ; passwordprotected = Yojson.Basic.Util.(json |> member "passwordprotected" |> to_int)
   ; maxplayers = Yojson.Basic.Util.(json |> member "maxplayers" |> to_int)
   ; slotinfo = Yojson.Basic.Util.(json |> member "slotinfo" |> to_string |> Slot_info.from_zlib_b64_str)
