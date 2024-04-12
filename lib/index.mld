@@ -18,11 +18,13 @@ let () =
     let client = Client.create domain game in
 ]}
 
-At this point your client can be used to make requests through the use of the {!module:Relic_sdk.Api} modules. The API is segmented into two modules:
+At this point your client can be used to make requests through the use of the {!module:Relic_sdk.Api} modules.
 
 {[
 let* achievements = Client.get Api.Community.Achievement.get_available client in
 ]}
+
+The API is segmented into two modules:
 
 {2 Community}
 

@@ -2,7 +2,7 @@ let () =
   Lwt_main.run
   @@ Alcotest_lwt.run
        "Relic SDK"
-       [ ( "api"
+       [ ( "Community API"
          , [ Alcotest_lwt.test_case "/community/advertisement/findAdvertisements" `Quick (fun _ () ->
                Test_cases.Api.test_get_advertisements ())
            ; Alcotest_lwt.test_case "/community/news/getNews" `Quick (fun _ () -> Test_cases.Api.test_get_news ())
@@ -19,8 +19,10 @@ let () =
                Test_cases.Api.test_get_leaderboards ())
            ; Alcotest_lwt.test_case "/community/leaderboard/GetAvatarStatForProfile" `Quick (fun _ () ->
                Test_cases.Api.test_get_avatar_stat ())
-           ; Alcotest_lwt.test_case "/community/leaderboard/getLeaderBoard2.json" `Quick (fun _ () ->
+           ; Alcotest_lwt.test_case "/community/leaderboard/getLeaderBoard2" `Quick (fun _ () ->
                Test_cases.Api.test_get_leaderboard2 ())
+           ; Alcotest_lwt.test_case "/community/leaderboard/getInventoryByProfileIDs" `Quick (fun _ () ->
+               Test_cases.Api.test_get_inventory ())
            ; Alcotest_lwt.test_case "invalid json" `Quick (fun _ () -> Test_cases.Api.test_invalid ())
            ] )
        ]
