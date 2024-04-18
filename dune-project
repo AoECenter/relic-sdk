@@ -42,5 +42,6 @@
     (>= 0.26.1)))
   (base
    (>= v0.12.0))
-  dune
+  (dune
+    (>= 3.15.0))
   dune-build-info))
