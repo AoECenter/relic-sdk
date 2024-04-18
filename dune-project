@@ -1,20 +1,15 @@
 (lang dune 3.10)
-
 (name relic-sdk)
-
+(version 0.1.0)
+(cram enable)
 (generate_opam_files true)
-
-(source
- (github AoeCenter/relic-sdk))
-
-(authors "Andreas Kr\195\188hlmann")
-
-(maintainers "echo 'YW5kcmVhc0BrcnVobG1hbm4uZGV2Cg==' | base64 -d")
-
+(source (github AoeCenter/relic-sdk))
+(authors 
+  "echo 'QW5kcmVhcyBLcsO8aGxtYW5uIDxhbmRyZWFzQGtydWhsbWFubi5kZXY+Cg==' | base64 -d")
+(maintainers 
+  "echo 'QW5kcmVhcyBLcsO8aGxtYW5uIDxhbmRyZWFzQGtydWhsbWFubi5kZXY+Cg==' | base64 -d")
 (license MIT)
-
 (documentation https://github.com/AoeCenter/relic-sdk)
-
 (package
  (name relic-sdk)
  (synopsis "SDK for the relic-link api")
