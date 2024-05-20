@@ -11,6 +11,7 @@ pkgs.mkShell{
     opam
     openssl
     ocamlPackages.ocamlformat
+    ocamlPackages.ocaml-lsp
     pkg-config
     zlib
   ];
