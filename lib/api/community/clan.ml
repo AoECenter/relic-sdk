@@ -8,7 +8,7 @@ let find ?(name = "") ?(tags = []) ?(join_policies = []) ?(start = 1) ?(count = 
       [ "title", Data.Game.to_str game
       ; "name", name
       ; "tags", Data.Query.encode_lst_s tags
-      ; "joinPolicies", Data.Query.encode_lst_i @@ List.map Models.Stub.Join_policy.to_int join_policies
+      ; "joinPolicies", Data.Query.encode_lst_i @@ List.map Models.Stub.Community.Join_policy.to_int join_policies
       ; "start", string_of_int start
       ; "count", string_of_int count
       ]

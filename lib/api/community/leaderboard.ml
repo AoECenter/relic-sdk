@@ -28,7 +28,7 @@ let get_avatar ?(profile_ids = []) game domain send =
 ;;
 
 let get_leaderboard_2
-  ?(sortby = Models.Stub.Leaderboard_sorting.ByRating)
+  ?(sortby = Models.Stub.Community.Leaderboard_sorting.ByRating)
   ?(platform = "PC_STEAM")
   ?(leaderboard_id = 3)
   ?(start = 1)
@@ -42,7 +42,7 @@ let get_leaderboard_2
     Uri.with_query'
       base_url
       [ "title", Data.Game.to_str game
-      ; "sortBy", string_of_int @@ Models.Stub.Leaderboard_sorting.to_int sortby
+      ; "sortBy", string_of_int @@ Models.Stub.Community.Leaderboard_sorting.to_int sortby
       ; "platform", platform
       ; "leaderboard_id", string_of_int leaderboard_id
       ; "start", string_of_int start
