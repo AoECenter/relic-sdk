@@ -24,6 +24,8 @@
     (>= 5.7.0))
   (lwt_ssl
    (>= 1.2.0))
+  (ptime
+    (>= 1.1.0))
   (alcotest
    (and
     :with-test

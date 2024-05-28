@@ -6,6 +6,7 @@ in
 
 pkgs.mkShell{
   packages = with pkgs; [
+    clang
     gmp
     ocaml
     opam
@@ -13,6 +14,7 @@ pkgs.mkShell{
     ocamlPackages.ocamlformat
     ocamlPackages.ocaml-lsp
     pkg-config
+    wireshark
     zlib
   ];
   shellHook = ''
