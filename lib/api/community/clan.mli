@@ -9,7 +9,7 @@
 val find
   :  ?name:string
   -> ?tags:string list
-  -> ?join_policies:Models.Stub.Join_policy.t list
+  -> ?join_policies:Models.Stub.Community.Join_policy.t list
   -> ?start:int
   -> ?count:int
   -> Data.Game.t

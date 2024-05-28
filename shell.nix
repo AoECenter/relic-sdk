@@ -21,5 +21,6 @@ pkgs.mkShell{
     export C_INCLUDE_PATH=${pkgs.zlib.dev}/include:$C_INCLUDE_PATH
     export LIBRARY_PATH=${pkgs.zlib}/lib:$LIBRARY_PATH
     export OPAM_SWITCH_PREFIX=$HOME/.opam/5.2.0
+    eval $(opam env)
   '';
 }

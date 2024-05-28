@@ -5,8 +5,8 @@
 
 (** Raw reponse type, which corresponds to the model returned by the API endpoint *)
 type t =
-  { result : Stub.Response.t (** Result header containing result code and message *)
-  ; achievement_defs : Stub.Achievement.t list (** List of achievement definitions *)
+  { result : Stub.Community.Response.t (** Result header containing result code and message *)
+  ; achievement_defs : Stub.Community.Achievement.t list (** List of achievement definitions *)
   }
 
 (** [to_json r] converts an achivement defitnion response [r] into its JSON
