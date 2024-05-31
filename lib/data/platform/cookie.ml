@@ -6,10 +6,15 @@ type t =
   ; application_gateway_affinity_cors : string
   ; reliclink : string
   ; session_id : string
-  ; expires_on : int
   }
 
-let get_seconds_until_expires c = c.expires_on - int_of_float (Unix.time ())
+let to_cookie_string cookie =
+  Printf.sprintf
+    "ApplicationGatewayAffinity=%s; ApplicationGatewayAffinityCORS=%s; reliclink=%s"
+    cookie.application_gateway_affinity
+    cookie.application_gateway_affinity_cors
+    cookie.reliclink
+;;
 
 let make_form_data alias auth =
   [ "accountType", [ "STEAM" ]
@@ -81,8 +86,7 @@ let create login domain =
   let application_gateway_affinity_cors = get_cookie_value cookies "ApplicationGatewayAffinityCORS" in
   let application_gateway_affinity = get_cookie_value cookies "ApplicationGatewayAffinity" in
   let reliclink = get_cookie_value cookies "reliclink" in
-  let expires_on = 3600 + int_of_float (Unix.time ()) in
   let session_id = extract_session_id body_str in
-  let c = { application_gateway_affinity; application_gateway_affinity_cors; reliclink; session_id; expires_on } in
+  let c = { application_gateway_affinity; application_gateway_affinity_cors; reliclink; session_id } in
   Lwt.return @@ Some c
 ;;

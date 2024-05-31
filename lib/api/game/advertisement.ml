@@ -24,6 +24,11 @@ let find_observable ?(start = 1) ?(count = 100) ?(sort = Descending) game domain
   in
   let* json = send url in
   match json with
-  | Some j -> Lwt.return @@ Some (Models.Response.Game.Observable_advertisements.from_json j)
+  | Some j ->
+    Lwt.return
+    @@ Data.Json.try_parse_as
+         (module Models.Response.Game.Observable_advertisements : Data.Json.JsonParsable
+           with type t = Models.Response.Game.Observable_advertisements.t)
+         j
   | None -> Lwt.return None
 ;;

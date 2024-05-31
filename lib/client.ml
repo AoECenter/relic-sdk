@@ -6,12 +6,25 @@ type t =
   ; cookie : Data.Platform.Cookie.t option
   }
 
-let create ?(login = None) domain game =
-  match login with
-  | Some l ->
-    let* cookie = Data.Platform.Cookie.create l domain in
-    Lwt.return { domain; game; cookie }
-  | None -> Lwt.return { domain; game; cookie = None }
+let create ?(login = None) ?(cookie = None) domain game =
+  match cookie with
+  | Some c ->
+    let* _ = Lwt_io.printl "Creating client using existing cookie" in
+    Lwt.return { domain; game; cookie = Some c }
+  | None ->
+    (match login with
+     | Some l ->
+       let* _ = Lwt_io.printl "Creating client using steam credentials" in
+       let* cookie = Data.Platform.Cookie.create l domain in
+       let* _ =
+         match cookie with
+         | Some c ->
+           Lwt_io.printl
+           @@ Printf.sprintf "Cookie created successfully '%s'" (Data.Platform.Cookie.to_cookie_string c)
+         | None -> Lwt_io.printl "Unable to create cookie"
+       in
+       Lwt.return { domain; game; cookie }
+     | None -> Lwt.return { domain; game; cookie = None })
 ;;
 
 let get_json ?(cookie = None) (url : Uri.t) =
@@ -24,15 +37,7 @@ let get_json ?(cookie = None) (url : Uri.t) =
   let headers =
     match cookie with
     | None -> Cohttp.Header.init ()
-    | Some c ->
-      let cookies_string =
-        Printf.sprintf
-          "ApplicationGatewayAffinity=%s; ApplicationGatewayAffinityCORS=%s; reliclink=%s"
-          c.application_gateway_affinity
-          c.application_gateway_affinity_cors
-          c.reliclink
-      in
-      Cohttp.Header.add (Cohttp.Header.init ()) "Cookie" cookies_string
+    | Some c -> Cohttp.Header.add (Cohttp.Header.init ()) "Cookie" (Data.Platform.Cookie.to_cookie_string c)
   in
   let* resp, body = Cohttp_lwt_unix.Client.get ~headers url_with_params in
   let status = Cohttp.Response.status resp in
@@ -40,14 +45,7 @@ let get_json ?(cookie = None) (url : Uri.t) =
   let curl_command =
     Printf.sprintf
       "curl -i -H 'Cookie: %s' '%s'"
-      (match cookie with
-       | Some c ->
-         Printf.sprintf
-           "ApplicationGatewayAffinity=%s; ApplicationGatewayAffinityCORS=%s; reliclink=%s"
-           c.application_gateway_affinity
-           c.application_gateway_affinity_cors
-           c.reliclink
-       | None -> "")
+      (match cookie with Some c -> Data.Platform.Cookie.to_cookie_string c | None -> "")
       (Uri.to_string url_with_params)
   in
   let* _ = Lwt_io.printl curl_command in

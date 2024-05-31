@@ -7,8 +7,9 @@ let get game domain send =
   match json with
   | Some j ->
     Lwt.return
-    @@ Json.try_parse_as
-         (module Models.Response.Community.News : Json.JsonParsable with type t = Models.Response.Community.News.t)
+    @@ Data.Json.try_parse_as
+         (module Models.Response.Community.News : Data.Json.JsonParsable
+           with type t = Models.Response.Community.News.t)
          j
   | None -> Lwt.return None
 ;;

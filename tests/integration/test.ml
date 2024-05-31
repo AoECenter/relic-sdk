@@ -23,10 +23,10 @@ let setup_community () =
 let setup_game () =
   let open Test_state.Game in
   let open Data.Platform.Steam_login in
-  let login = Some { alias = vgetenv "STEAM_USER_ALIAS"; app_ticket = vgetenv "STEAM_APP_TICKET" } in
   let domain = "aoe-api.worldsedgelink.com" in
   let game = Data.Game.Age2 in
   let endpoint = Api.Community.Leaderboard.get_leaderboard_2 ~count:1 in
+  let login = Some { alias = vgetenv "STEAM_USER_ALIAS"; app_ticket = vgetenv "STEAM_APP_TICKET" } in
   let* client = Client.create ~login domain game in
   let* leaderboards_response = Client.get endpoint client in
   match leaderboards_response with
