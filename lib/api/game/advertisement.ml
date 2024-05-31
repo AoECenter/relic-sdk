@@ -1,7 +1,7 @@
 open Lwt.Syntax
 open Data.Sort
 
-let find_observable ?(start = 1) ?(count = 100) ?(sort = Descending) game domain send =
+let find_observable ?(start = 1) ?(count = 100) ?(sort = Descending) ?(profile_ids = []) game domain send =
   let should_descend = match sort with Ascending -> 0 | Descending -> 1 in
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/game/advertisement/findObservableAdvertisements" () in
   let url =
@@ -20,6 +20,7 @@ let find_observable ?(start = 1) ?(count = 100) ?(sort = Descending) game domain
       ; "dataChecksum", "-888"
       ; "appBinaryChecksum", "113358"
       ; "versionFlags", "56950784"
+      ; "profileids", Data.Query.encode_lst_i profile_ids
       ]
   in
   let* json = send url in
