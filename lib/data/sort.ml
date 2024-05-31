@@ -1,0 +1,3 @@
+type t =
+  | Ascending
+  | Descending

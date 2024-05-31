@@ -1,5 +1,5 @@
 type t =
-  { id : int
+  { status : int
   ; image_url : string option
   ; title : string
   ; subtitle : string option
@@ -14,7 +14,7 @@ type t =
 let from_json json =
   match json with
   | `List
-      [ id
+      [ status
       ; image_url
       ; title
       ; subtitle
@@ -25,7 +25,7 @@ let from_json json =
       ; start_time
       ; end_time
       ] ->
-    { id = Yojson.Basic.Util.to_int id
+    { status = Yojson.Basic.Util.to_int status
     ; image_url = Yojson.Basic.Util.to_string_option image_url
     ; title = Yojson.Basic.Util.to_string title
     ; subtitle = Yojson.Basic.Util.to_string_option subtitle
@@ -41,7 +41,7 @@ let from_json json =
 
 let to_json n =
   `List
-    [ `Int n.id
+    [ `Int n.status
     ; (match n.image_url with Some url -> `String url | None -> `Null)
     ; `String n.title
     ; (match n.subtitle with Some sub -> `String sub | None -> `Null)

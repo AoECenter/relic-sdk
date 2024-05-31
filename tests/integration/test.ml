@@ -2,6 +2,8 @@ open Relic_sdk
 open Alcotest_lwt
 open Lwt.Syntax
 
+let vgetenv k = try Sys.getenv k with Not_found -> failwith @@ Printf.sprintf "Environment variable %s not found" k
+
 let setup_community () =
   let open Test_state.Community in
   let domain = "aoe-api.worldsedgelink.com" in
@@ -21,7 +23,7 @@ let setup_community () =
 let setup_game () =
   let open Test_state.Game in
   let open Data.Platform.Steam_login in
-  let login = Some { alias = Sys.getenv "STEAM_USER_ALIAS"; app_ticket = Sys.getenv "STEAM_APP_TICKET" } in
+  let login = Some { alias = vgetenv "STEAM_USER_ALIAS"; app_ticket = vgetenv "STEAM_APP_TICKET" } in
   let domain = "aoe-api.worldsedgelink.com" in
   let game = Data.Game.Age2 in
   let endpoint = Api.Community.Leaderboard.get_leaderboard_2 ~count:1 in
@@ -52,7 +54,12 @@ let () =
             `Slow
             (Test_case.Community.Achievements.test_get_user_achievements_no_user setup_data_community)
         ] )
-    ; "Game", [ test_case "News" `Slow (Test_case.Game.News.test_get_news setup_data_game) ]
+    ; ( "Game"
+      , [ test_case
+            "Advertisements"
+            `Slow
+            (Test_case.Game.Advertisements.test_get_observable_advertisements setup_data_game)
+        ] )
     ]
   in
   Alcotest_lwt.run "Relic SDK" suite

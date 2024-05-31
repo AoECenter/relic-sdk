@@ -3,7 +3,4 @@ ifneq (,$(wildcard ./.env))
     export
 endif
 
-x:
-	set
-
 include make/ocaml/main.mk

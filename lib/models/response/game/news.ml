@@ -4,7 +4,7 @@ type t =
   ; tail : Yojson.Basic.t list
   }
 
-let to_json n = `List ([ `Int n.id; `List (List.map Stub.Game.News.to_json n.news) ] @ n.tail)
+let to_json n = `List ([ `Int n.status; `List (List.map Stub.Game.News.to_json n.news) ] @ n.tail)
 
 let from_json json =
   match json with

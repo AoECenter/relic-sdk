@@ -36,7 +36,10 @@ let test_find_clans () =
   let requester = Mock.Json_file.create_requester "findClan.json" in
   let* client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
   let endpoint =
-    Api.Community.Clan.find ~name:"My name" ~join_policies:[ Models.Stub.Join_policy.Open ] ~tags:[ "My tag" ]
+    Api.Community.Clan.find
+      ~name:"My name"
+      ~join_policies:[ Models.Stub.Community.Join_policy.Open ]
+      ~tags:[ "My tag" ]
   in
   let* response = Client.get endpoint client ~requester in
   match response with

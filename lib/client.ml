@@ -36,16 +36,35 @@ let get_json ?(cookie = None) (url : Uri.t) =
   in
   let* resp, body = Cohttp_lwt_unix.Client.get ~headers url_with_params in
   let status = Cohttp.Response.status resp in
+  let* body_str = Cohttp_lwt.Body.to_string body in
+  let curl_command =
+    Printf.sprintf
+      "curl -i -H 'Cookie: %s' '%s'"
+      (match cookie with
+       | Some c ->
+         Printf.sprintf
+           "ApplicationGatewayAffinity=%s; ApplicationGatewayAffinityCORS=%s; reliclink=%s"
+           c.application_gateway_affinity
+           c.application_gateway_affinity_cors
+           c.reliclink
+       | None -> "")
+      (Uri.to_string url_with_params)
+  in
+  let* _ = Lwt_io.printl curl_command in
   if Cohttp.Code.code_of_status status = 200
-  then
-    let* body_str = Cohttp_lwt.Body.to_string body in
+  then (
     let json = Yojson.Basic.from_string body_str in
-    Lwt.return (Some json)
+    Lwt.return (Some json))
   else (
     (* TODO: Find out what to do with this later. What's the return type? Do we have Result<a,b>? *)
     let url_str = Uri.to_string url_with_params in
     let* _ =
-      Lwt_io.printl @@ Printf.sprintf "HTTP Error: %s for URL: %s" (Cohttp.Code.string_of_status status) url_str
+      Lwt_io.printl
+      @@ Printf.sprintf
+           "HTTP Error: %s for URL: %s\nResponse: %s"
+           (Cohttp.Code.string_of_status status)
+           url_str
+           body_str
     in
     Lwt.return None)
 ;;

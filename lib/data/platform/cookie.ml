@@ -59,7 +59,8 @@ let get_cookie_value cookies name =
     |> List.tl
     |> String.concat "="
   with
-  | Not_found -> failwith @@ Printf.sprintf "Cookie '%s' not found in '%s'" name (String.concat ";" cookies)
+  | Not_found ->
+    failwith @@ Printf.sprintf "Invalid credentials. Cookie '%s' not found in '%s'" name (String.concat ";" cookies)
 ;;
 
 let extract_session_id body_str =
