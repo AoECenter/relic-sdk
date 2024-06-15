@@ -116,6 +116,16 @@ let test_get_inventory () =
   | None -> Lwt.fail_with "Expected Some but got None"
 ;;
 
+let test_get_observable_advertisments () =
+  let requester = Mock.Json_file.create_requester "findObservableAdvertisements.json" in
+  let* client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age4 in
+  let endpoint = Api.Game.Advertisement.find_observable in
+  let* response = Client.get endpoint client ~requester in
+  match response with
+  | Some r -> Lwt.return @@ Alcotest.(check int) "Response was success" 0 r.status
+  | None -> Lwt.fail_with "Expected Some but got None"
+;;
+
 let test_proxy_request () =
   let requester = Mock.Json_file.create_requester "proxysteamuserrequest.json" in
   let* client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in

@@ -13,6 +13,7 @@ pkgs.mkShell{
     openssl
     ocamlPackages.ocamlformat
     ocamlPackages.ocaml-lsp
+    nodePackages.vscode-json-languageserver
     pkg-config
     wireshark
     zlib
