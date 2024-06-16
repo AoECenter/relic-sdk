@@ -83,6 +83,7 @@ let create login domain =
   in
   let* body_str = Cohttp_lwt.Body.to_string body in
   let cookies = extract_cookies @@ Cohttp.Response.headers response in
+  let* _ = Logger.Async.debug ~m:"Cookie" ~f:"create" "Cookie retrieved" in
   let application_gateway_affinity_cors = get_cookie_value cookies "ApplicationGatewayAffinityCORS" in
   let application_gateway_affinity = get_cookie_value cookies "ApplicationGatewayAffinity" in
   let reliclink = get_cookie_value cookies "reliclink" in
