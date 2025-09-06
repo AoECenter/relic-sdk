@@ -18,3 +18,6 @@ val to_str : t -> string
 
 (** [to_app_id g] converts a game [g] into its steam app id *)
 val to_app_id : t -> int
+
+(** [to_domain g] converts a game [g] into a string representation of the domain endpoint *)
+val to_domain : t -> string

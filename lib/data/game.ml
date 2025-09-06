@@ -23,3 +23,9 @@ let to_app_id = function
   | Coh3 -> 1677280
   | Dow1de -> 3556750
 ;;
+
+let to_domain = function
+  | Age1 | Age2 | Age3 | Age4 -> "aoe-api.worldsedgelink.com"
+  | Coh3 -> "coh3-api.reliclink.com"
+  | Dow1de -> "dow-api.reliclink.com"
+;;
