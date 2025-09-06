@@ -60,6 +60,25 @@ let get_leaderboard_2
   | None -> Lwt.return None
 ;;
 
+let get_recent_match_history ~profile_ids game domain send =
+  match profile_ids with
+  | [] -> Lwt.fail_with "Profile IDs list cannot be empty"
+  | _ ->
+    let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/leaderboard/getRecentMatchHistory" () in
+    let profile_ids_j : Yojson.Basic.t = `List (List.map (fun i -> `Int i) profile_ids) in
+    let url =
+      Uri.with_query'
+        base_url
+        [ "title", Data.Game.to_str game; "format", "json"; "profile_ids", Yojson.Basic.to_string profile_ids_j ]
+    in
+    let* json = send url in
+    (match json with
+     | Some j ->
+       let model = Models.Response.Community.Recent_match_history.from_json j in
+       Lwt.return @@ Some model
+     | None -> Lwt.return None)
+;;
+
 let get_personal_stat ~profile_ids game domain send =
   match profile_ids with
   | [] -> Lwt.fail_with "Profile IDs list cannot be empty"
