@@ -2,7 +2,7 @@ open Lwt.Syntax
 
 let get game domain send =
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/leaderboard/GetAvailableLeaderboards" () in
-  let url = Uri.with_query' base_url [ "title", Data.Game.to_str game ] in
+  let url = Uri.with_query' base_url [ "title", Data.Game.to_str game; "format", "json" ] in
   let* json = send url in
   match json with
   | Some j ->
@@ -17,7 +17,9 @@ let get_avatar ?(profile_ids = []) game domain send =
   | _ids ->
     let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/leaderboard/GetAvatarStatForProfile" () in
     let url =
-      Uri.with_query' base_url [ "title", Data.Game.to_str game; "profile_ids", Data.Query.encode_lst_i profile_ids ]
+      Uri.with_query'
+        base_url
+        [ "title", Data.Game.to_str game; "profile_ids", Data.Query.encode_lst_i profile_ids; "format", "json" ]
     in
     let* json = send url in
     (match json with
@@ -47,6 +49,7 @@ let get_leaderboard_2
       ; "leaderboard_id", string_of_int leaderboard_id
       ; "start", string_of_int start
       ; "count", string_of_int count
+      ; "format", "json"
       ]
   in
   let* json = send url in
