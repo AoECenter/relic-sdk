@@ -59,3 +59,22 @@ let get_leaderboard_2
     Lwt.return @@ Some model
   | None -> Lwt.return None
 ;;
+
+let get_personal_stat ~profile_ids game domain send =
+  match profile_ids with
+  | [] -> Lwt.fail_with "Profile IDs list cannot be empty"
+  | _ ->
+    let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/leaderboard/getPersonalStat" () in
+    let profile_ids_j : Yojson.Basic.t = `List (List.map (fun i -> `Int i) profile_ids) in
+    let url =
+      Uri.with_query'
+        base_url
+        [ "title", Data.Game.to_str game; "format", "json"; "profile_ids", Yojson.Basic.to_string profile_ids_j ]
+    in
+    let* json = send url in
+    (match json with
+     | Some j ->
+       let model = Models.Response.Community.Personal_stat.from_json j in
+       Lwt.return @@ Some model
+     | None -> Lwt.return None)
+;;
