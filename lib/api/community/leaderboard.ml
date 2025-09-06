@@ -30,14 +30,14 @@ let get_avatar ?(profile_ids = []) game domain send =
 ;;
 
 let get_leaderboard_2
-  ?(sortby = Models.Stub.Community.Leaderboard_sorting.ByRating)
-  ?(platform = "PC_STEAM")
-  ?(leaderboard_id = 3)
-  ?(start = 1)
-  ?(count = 100)
-  game
-  domain
-  send
+      ?(sortby = Models.Stub.Community.Leaderboard_sorting.ByRating)
+      ?(platform = "PC_STEAM")
+      ?(leaderboard_id = 3)
+      ?(start = 1)
+      ?(count = 100)
+      game
+      domain
+      send
   =
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/leaderboard/getLeaderboard2" () in
   let url =
