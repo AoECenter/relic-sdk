@@ -1,6 +1,6 @@
 open Lwt.Syntax
 
-let get game domain send =
+let get_available_leaderboards game domain send =
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/leaderboard/GetAvailableLeaderboards" () in
   let url = Uri.with_query' base_url [ "title", Data.Game.to_str game; "format", "json" ] in
   let* json = send url in
@@ -10,6 +10,8 @@ let get game domain send =
     Lwt.return @@ Some model
   | None -> Lwt.return None
 ;;
+
+let get game domain send = get_available_leaderboards game domain send
 
 let get_avatar ?(profile_ids = []) game domain send =
   match profile_ids with
