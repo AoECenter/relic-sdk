@@ -13,7 +13,7 @@ let get_available_leaderboards game domain send =
 
 let get game domain send = get_available_leaderboards game domain send
 
-let get_avatar ?(profile_ids = []) game domain send =
+let get_avatar ~profile_ids game domain send =
   match profile_ids with
   | [] -> Lwt.fail_with "Profile IDs list cannot be empty"
   | _ids ->
