@@ -36,7 +36,7 @@ let get_leaderboard_2
       ?(platform = "PC_STEAM")
       ?(leaderboard_id = 3)
       ?(start = 1)
-      ?(count = 100)
+      ?(count = 200)
       game
       domain
       send

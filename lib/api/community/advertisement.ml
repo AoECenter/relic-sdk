@@ -1,6 +1,6 @@
 open Lwt.Syntax
 
-let get ?(start = 1) ?(count = 100) game domain send =
+let get ?(start = 0) ?(count = 100) game domain send =
   let base_url = Uri.make ~scheme:"https" ~host:domain ~path:"/community/advertisement/findAdvertisements" () in
   let url =
     Uri.with_query'
