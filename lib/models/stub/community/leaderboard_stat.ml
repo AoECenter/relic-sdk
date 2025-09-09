@@ -9,13 +9,13 @@ type t =
   ; rank : int
   ; ranktotal : int
   ; ranklevel : int
-  ; rating : int
+  ; rating : int option
   ; regionrank : int
   ; regionranktotal : int
   ; lastmatchdate : int
   ; highestrank : int
   ; highestranklevel : int
-  ; highestrating : int
+  ; highestrating : int option
   }
 
 let to_json sg =
@@ -30,13 +30,15 @@ let to_json sg =
     ; "rank", `Int sg.rank
     ; "ranktotal", `Int sg.ranktotal
     ; "ranklevel", `Int sg.ranklevel
-    ; "rating", `Int sg.rating
+    ; "rating", `Int (Option.value ~default:0 sg.rating)
+      (* TODO: maybe do something more sensible than default to 0? *)
     ; "regionrank", `Int sg.regionrank
     ; "regionranktotal", `Int sg.regionranktotal
     ; "lastmatchdate", `Int sg.lastmatchdate
     ; "highestrank", `Int sg.highestrank
     ; "highestranklevel", `Int sg.highestranklevel
-    ; "highestrating", `Int sg.highestrating
+    ; "highestrating", `Int (Option.value ~default:0 sg.highestrating)
+      (* TODO: maybe do something more sensible than default to 0? *)
     ]
 ;;
 
@@ -52,12 +54,12 @@ let from_json json =
   ; rank = json |> member "rank" |> to_int
   ; ranktotal = json |> member "ranktotal" |> to_int
   ; ranklevel = json |> member "ranklevel" |> to_int
-  ; rating = json |> member "rating" |> to_int
+  ; rating = json |> member "rating" |> to_int_option
   ; regionrank = json |> member "regionrank" |> to_int
   ; regionranktotal = json |> member "regionranktotal" |> to_int
   ; lastmatchdate = json |> member "lastmatchdate" |> to_int
   ; highestrank = json |> member "highestrank" |> to_int
   ; highestranklevel = json |> member "highestranklevel" |> to_int
-  ; highestrating = json |> member "highestrating" |> to_int
+  ; highestrating = json |> member "highestrating" |> to_int_option
   }
 ;;

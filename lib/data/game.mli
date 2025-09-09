@@ -10,9 +10,14 @@ type t =
   | Age2 (** Age of Empires 2: Definitive Edition *)
   | Age3 (** Age of Empires 3: Definitive Edition *)
   | Age4 (** Age of Empires 4 *)
+  | Coh3 (** Company of Heroes 3 *)
+  | Dow1de (** Dawn of War: Definitive Edition *)
 
 (** [to_str g] converts a game [g] into its string representation for use in the relic-link API *)
 val to_str : t -> string
 
-(** [to_str g] converts a game [g] into its steam app id *)
+(** [to_app_id g] converts a game [g] into its steam app id *)
 val to_app_id : t -> int
+
+(** [to_domain g] converts a game [g] into a string representation of the domain endpoint *)
+val to_domain : t -> string
