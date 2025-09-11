@@ -14,6 +14,9 @@ val get_avatar
   -> Data.Requester.Json.t
   -> Models.Response.Community.Avatar_stat.t option Lwt.t
 
+(** [get_leaderboard_2 l g d s] retrieves the leaderboard with id [l]
+    for game [g] on domain [d]. Requests are sent with [s].
+    Start must be in the range(1, 2147483647). Count must be in the range(1, 200). *)
 val get_leaderboard_2
   :  ?sortby:Models.Stub.Community.Leaderboard_sorting.t
   -> ?platform:string
@@ -25,6 +28,8 @@ val get_leaderboard_2
   -> Data.Requester.Json.t
   -> Models.Response.Community.Leaderboard2.t option Lwt.t
 
+(** [get_recent_match_history p g d s] retrieves recent matches for the provided profile_ids [p]
+    for game [g] on domain [d]. Requests are sent with [s]. At most 10 profile_ids may be given. *)
 val get_recent_match_history
   :  profile_ids:int list
   -> Data.Game.t
@@ -32,6 +37,8 @@ val get_recent_match_history
   -> Data.Requester.Json.t
   -> Models.Response.Community.Recent_match_history.t option Lwt.t
 
+(** [get_personal_stat p g d s] retrieves personal stats for the provided profile_ids [p]
+    for game [g] on domain [d]. Requests are sent with [s]. At most 10 profile_ids may be given. *)
 val get_personal_stat
   :  profile_ids:int list
   -> Data.Game.t
