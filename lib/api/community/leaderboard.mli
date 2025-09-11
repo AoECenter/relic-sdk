@@ -8,7 +8,7 @@ val get : Data.Game.t -> string -> Data.Requester.Json.t -> Models.Response.Comm
 [@@deprecated "Use the more clearly named 'get_available_leaderboards' instead"]
 
 val get_avatar
-  :  ?profile_ids:int list
+  :  profile_ids:int list
   -> Data.Game.t
   -> string
   -> Data.Requester.Json.t
