@@ -75,7 +75,7 @@ let test_get_community_events () =
 let test_get_leaderboards () =
   let requester = Mock.Json_file.create_requester "GetAvailableLeaderboards.json" in
   let* client = Client.create "aoe-api.worldsedgelink.com" Data.Game.Age2 in
-  let endpoint = Api.Community.Leaderboard.get in
+  let endpoint = Api.Community.Leaderboard.get_available_leaderboards in
   let* response = Client.get endpoint client ~requester in
   match response with
   | Some r ->
